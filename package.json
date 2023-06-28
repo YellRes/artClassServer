@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node bin/www",
-    "dev": "npx nodemon bin/www",
+    "dev": "npx nodemon bin/www --mode development",
     "prd": "pm2 start bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "debug": "^4.1.1",
+    "dotenv": "^16.3.1",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-convert": "^1.2.0",

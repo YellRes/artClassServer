@@ -11,9 +11,6 @@ const logger = require("koa-logger");
 const index = require("./routes/index");
 const users = require("./routes/users");
 
-// TODO: 能否使用 路径别名 来优化
-const { baseMysql } = require("./msvc/core/baseMysql");
-
 // error handler
 onerror(app);
 

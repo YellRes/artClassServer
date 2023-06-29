@@ -1,7 +1,8 @@
-const userService = require("../service/user");
+const { getUserList } = require("../service/user");
 
 const getAllUser = async (ctx, next) => {
-  let data = await userService.getAllUser();
+  let data = await getUserList();
+  console.log(data, "data");
   return (ctx.response.body = data);
 };
 

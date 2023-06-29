@@ -1,4 +1,4 @@
-const { baseMysql } = require("./baseMysql");
+const { baseMysql } = require("./dataBasePool");
 
 let allSqlAction = async (sql, val) => {
   // TODO: 不支持await?

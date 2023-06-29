@@ -1,9 +1,15 @@
-const { allSqlAction } = require("../core/model");
+const User = require("../model/user");
 
-const getAllUser = async () => {
-  let sql = "select * from users";
-  // console.log(allSqlAction, "allSqlAction");
-  return await allSqlAction(sql);
+const getUserList = async (params) => {
+  const { limit, offset, project } = params || {};
+
+  return await User.findAndCountAll({
+    limit,
+    offset,
+    order: [["id", "desc"]],
+  });
 };
 
-module.exports = { getAllUser };
+module.exports = {
+  getUserList,
+};

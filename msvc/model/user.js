@@ -15,6 +15,10 @@ User.init(
       type: DataTypes.STRING,
       comment: "用户姓名",
     },
+    nickname: {
+      type: DataTypes.STRING,
+      comment: "用户昵称",
+    },
     gender: {
       type: DataTypes.BOOLEAN,
       comment: "用户性别",
@@ -27,11 +31,14 @@ User.init(
       type: DataTypes.STRING,
       comment: "支付金额",
     },
-    contactMobile: {
+    contactPhone: {
       type: DataTypes.STRING,
       comment: "手机号码",
     },
-    // course
+    registrationDate: {
+      type: DataTypes.DATE,
+      comment: "报名日期",
+    },
   },
 
   {

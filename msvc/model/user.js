@@ -15,6 +15,10 @@ User.init(
       type: DataTypes.STRING,
       comment: "用户姓名",
     },
+    password: {
+      type: DataTypes.STRING,
+      comment: "用户密码",
+    },
     nickname: {
       type: DataTypes.STRING,
       comment: "用户昵称",
@@ -35,6 +39,10 @@ User.init(
       type: DataTypes.STRING,
       comment: "手机号码",
     },
+    email: {
+      type: DataTypes.STRING,
+      comment: "用户邮箱",
+    },
     registrationDate: {
       type: DataTypes.DATE,
       comment: "报名日期",
@@ -43,7 +51,7 @@ User.init(
 
   {
     sequelize: baseMysql,
-    modelName: "user",
+    modelName: "User",
     freezeTableName: true,
   }
 );

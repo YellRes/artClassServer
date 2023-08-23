@@ -3,6 +3,7 @@ require("./config/env");
 const Koa = require("koa");
 const app = new Koa();
 const views = require("koa-views");
+const koaJwt = require("koa-jwt");
 const json = require("koa-json");
 const onerror = require("koa-onerror");
 const bodyparser = require("koa-bodyparser");
@@ -26,6 +27,13 @@ app.use(
 );
 app.use(json());
 app.use(logger());
+app.use(
+  koaJwt({
+    secret: process.env.JWT_SECRET,
+  }).unless({
+    path: [/login/],
+  })
+);
 app.use(require("koa-static")(__dirname + "/public"));
 
 app.use(
@@ -39,7 +47,6 @@ app.use(async (ctx, next) => {
   const start = new Date();
   await next();
   const ms = new Date() - start;
-  // console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
 });
 
 // routes

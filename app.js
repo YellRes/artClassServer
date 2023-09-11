@@ -31,7 +31,7 @@ app.use(
   koaJwt({
     secret: process.env.JWT_SECRET,
   }).unless({
-    path: [/login/],
+    path: [/login|register/],
   })
 );
 app.use(require("koa-static")(__dirname + "/public"));

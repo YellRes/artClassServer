@@ -51,7 +51,13 @@ const login = async (ctx, next) => {
       expiresIn: "24h",
     }
   );
-  ctx.body = successRes({ text: "登录成功", data: token });
+  ctx.body = successRes({ text: "登录成功", data: {
+    status: 200,
+    name,
+    token,
+    nickname: userWithRightPassword.nickname,
+    email: userWithRightPassword.email
+  } });
   next();
 };
 

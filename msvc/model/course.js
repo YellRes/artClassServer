@@ -36,12 +36,16 @@ Course.init(
       comment: "结束时间",
     },
     detail: {
-      type: DataTypes.STRING.BINARY,
+      type: DataTypes.JSON,
       comment: "课程信息",
     },
     desc: {
         type: DataTypes.CHAR,
         comment: "描述",
+    },
+    status: {
+        type: DataTypes.INTEGER,
+        comment: "课程状态: 0-正常, 1-结束, 2-暂停",
     }
   },
 

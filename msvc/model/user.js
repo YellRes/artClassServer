@@ -47,6 +47,10 @@ User.init(
       type: DataTypes.DATE,
       comment: "报名日期",
     },
+    status: {
+      type: DataTypes.INTEGER,
+      comment: "0-正常,1-结课,2-暂休"
+    }
   },
 
   {

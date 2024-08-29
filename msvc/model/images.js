@@ -23,7 +23,7 @@ Images.init(
       type: DataTypes.BLOB('medium'),
       comment: "图片base64",
     },
-    username: {
+    desc: {
         type: DataTypes.STRING,
         comment: "描述",
       },

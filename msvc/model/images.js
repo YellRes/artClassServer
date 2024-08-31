@@ -20,7 +20,7 @@ Images.init(
       comment: "用户名称，用于User表连表查询",
     },
     data: {
-      type: DataTypes.BLOB('medium'),
+      type: DataTypes.TEXT('long'),
       comment: "图片base64",
     },
     desc: {

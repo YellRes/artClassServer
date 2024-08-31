@@ -16,6 +16,10 @@ const createCourse = async (params) => {
   return await Course.create({username, name, startTime, endTime, detail, desc, status});
 }
 
+const findCourses = async () => {
+  return await Course.findAll();
+}
+
 const updateCourse = async (params) => {
   const {username, name, startTime, endTime, detail, consume, rest, desc, status} = params;
   const _course = await Course.findOne({where: {name,username}});
@@ -24,5 +28,6 @@ const updateCourse = async (params) => {
 
 module.exports = {
   getCourses,
-  createCourse
+  createCourse,
+  findCourses
 };

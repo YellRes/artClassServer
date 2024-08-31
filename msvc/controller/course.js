@@ -1,4 +1,4 @@
-const { getCourses, createCourse, updateCourse } = require("../service/course");
+const { getCourses, createCourse, findCourses, updateCourse } = require("../service/course");
 
 const getUserCourses = async (ctx, next) => {
   let data = await getCourses(ctx.request.query);
@@ -19,8 +19,15 @@ const updateUserCourse = async (ctx, next) => {
   next();
 }
 
+const getCourseList = async (ctx, next) => {
+  const data = await findCourses();
+  ctx.response.body = {text:'获取成功', status: 0, data};
+  next();
+}
+
 module.exports = {
     getUserCourses,
     createUserCourse,
-    updateUserCourse
+    updateUserCourse,
+    getCourseList
 };
